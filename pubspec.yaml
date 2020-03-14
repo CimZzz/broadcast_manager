@@ -1,8 +1,8 @@
 name: broadcast_manager
-description: A starting point for Dart libraries or applications.
+description: To make broadcast easy!
 version: 1.0.0
-homepage: https://www.virtual-lightin.com
-# author: cimzzz <1152564696@qq.com>
+homepage: https://github.com/CimZzz/broadcast_manager
+author: Cimzzz <1152564696@qq.com>
 
 environment:
   sdk: '>=2.2.0 <3.0.0'
