@@ -231,6 +231,10 @@ class BroadcastManager {
 	void unregisterObjectAllReceiver(dynamic source) {
 		source ??= _noneObj;
 		final nodeSet = _objRefMap[source];
+		if (nodeSet == null) {
+			return;
+		}
+		
 		nodeSet.forEach((node) {
 			_removeNode(node);
 		});
