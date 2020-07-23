@@ -51,7 +51,7 @@ class _BroadcastDispatcher {
 	
 	_BroadcastDispatcher(this.key);
 	
-	final String key;
+	final dynamic key;
 	
 	/// 根广播节点
 	_BroadcastNode rootNode;
