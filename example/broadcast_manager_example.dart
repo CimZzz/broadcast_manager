@@ -16,9 +16,13 @@ void main() {
     builder.registerDataReceiver(key: 'key1', isAllowNull: true, receiver: (String data) {
       print('recv(4), data: $data');
     });
-    
+
     builder.registerDataReceiver(key: 'key2', isAllowNull: false, receiver: (String data) {
       print('recv(5), data: $data');
+    });
+
+    builder.registerDataReceiver(key: 'key3', isAllowNull: false, receiver: (List<String> data) {
+      print('recv(6), data: $data');
     });
   });
   final obj = Object();
@@ -39,4 +43,6 @@ void main() {
   manager.dispatch(key: 'key1', data: null);
   print('=====key2 again======');
   manager.dispatch(key: 'key2', data: 'hello');
+  print('=====key3======');
+  manager.dispatch(key: 'key3', data: ['123', '321']);
 }

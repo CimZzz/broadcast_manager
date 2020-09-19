@@ -21,6 +21,10 @@ class _DataReceiverWrapper<T> {
 	
 	/// 数据类型
 	final Type type = T;
+
+	/// 数据类型字符串
+	/// 泛型数据可能会导致相同类型匹配不上，这里使用字符串进行二次匹配
+	final String typeStr = T.toString();
 	
 	/// 是否允许数据为 null 时触发回调
 	final bool isAllowNull;
@@ -76,6 +80,9 @@ class _BroadcastDispatcher {
 					}
 				}
 				else if (wrapper.type == data.runtimeType) {
+					node.callback.receiver(data);
+				}
+				else if (wrapper.typeStr == data.runtimeType.toString()) {
 					node.callback.receiver(data);
 				}
 			}
